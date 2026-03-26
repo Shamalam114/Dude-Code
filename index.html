@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dude Code — Digital Craftsman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       LOADER
+  ═══════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <svg class="loader-logo" viewBox="0 0 60 60" fill="none">
+        <polygon points="30,4 56,18 56,46 30,56 4,46 4,18" stroke="var(--accent)" stroke-width="2" fill="none" class="hex-stroke"/>
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="var(--accent)" font-family="Syne" font-size="18" font-weight="800">AM</text>
+      </svg>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <span class="loader-label">Crafting Experience…</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CUSTOM CURSOR
+  ═══════════════════════════════════════ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Dude Code<span class="logo-dot">.</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"       class="nav-link">About</a></li>
+      <li><a href="#services"    class="nav-link">Services</a></li>
+      <li><a href="#portfolio"   class="nav-link">Work</a></li>
+      <li><a href="#testimonials"class="nav-link">Reviews</a></li>
+      <li><a href="#contact"     class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-sm nav-cta">Hire Me</a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Decorative blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">Available for Projects</div>
+
+      <h1 class="hero-heading reveal-up">
+        <span class="line">Hello, I'm</span>
+        <span class="line name-line">Shamsul Alam<span class="accent-dot">.</span></span>
+      </h1>
+
+      <div class="hero-roles reveal-up">
+        <span class="role-static">I build &amp; grow&nbsp;</span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-sub reveal-up">
+        Full-stack developer · App architect · Growth marketer — crafting digital experiences that convert, scale, and stand out.
+      </p>
+
+      <div class="hero-btns reveal-up">
+        <a href="#portfolio" class="btn btn-primary">
+          <span>View Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Hire Me</a>
+      </div>
+
+      <div class="hero-stats reveal-up">
+        <div class="stat"><span class="stat-num" data-target="60">0</span><span>+</span><p>Projects Done</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="40">0</span><span>+</span><p>Happy Clients</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="5">0</span><span>+</span><p>Years Exp.</p></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Who I Am</span>
+        <h2>Turning Ideas Into<br><em>Digital Reality</em></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image-wrap reveal-left">
+          <div class="about-img-frame">
+            <div class="about-img-placeholder">
+              <svg viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="75" r="38" fill="var(--accent)" opacity=".15"/>
+                <circle cx="100" cy="75" r="38" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <ellipse cx="100" cy="165" rx="62" ry="35" fill="var(--accent)" opacity=".08"/>
+                <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="var(--accent)" font-size="52" font-family="Syne" font-weight="800">AM</text>
+              </svg>
+            </div>
+            <div class="about-img-badge">
+              <svg width="18" height="18" fill="var(--accent)" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              5-Star Rated
+            </div>
+          </div>
+          <div class="floating-card fc-1">
+            <span class="fc-emoji">🚀</span>
+            <div><strong>60+</strong><small>Projects</small></div>
+          </div>
+          <div class="floating-card fc-2">
+            <span class="fc-emoji">💡</span>
+            <div><strong>Full Stack</strong><small>Developer</small></div>
+          </div>
+        </div>
+
+        <div class="about-text reveal-right">
+          <p class="about-bio">
+            I'm a multi-disciplinary digital creator based in India, passionate about building products that marry aesthetic finesse with technical robustness. From pixel-perfect UIs to performance-tuned backend APIs — I do it all.
+          </p>
+          <p class="about-bio">
+            Beyond code, I help businesses grow through data-driven Google Ads campaigns, technical SEO, and compelling video content. <strong>Your vision. My execution.</strong>
+          </p>
+
+          <div class="skills-grid">
+            <!-- Skill cards -->
+            <div class="skill-card reveal-up" style="--d:.05s">
+              <div class="skill-icon">⚛️</div>
+              <h4>React / Next.js</h4>
+              <div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div>
+            </div>
+            <div class="skill-card reveal-up" style="--d:.1s">
+              <div class="skill-icon">🐍</div>
+              <h4>Node / Python</h4>
+              <div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div>
+            </div>
+            <div class="skill-card reveal-up" style="--d:.15s">
+              <div class="skill-icon">📱</div>
+              <h4>React Native</h4>
+              <div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div>
+            </div>
+            <div class="skill-card reveal-up" style="--d:.2s">
+              <div class="skill-icon">📊</div>
+              <h4>Google Ads</h4>
+              <div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div>
+            </div>
+            <div class="skill-card reveal-up" style="--d:.25s">
+              <div class="skill-icon">🔍</div>
+              <h4>SEO</h4>
+              <div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div>
+            </div>
+            <div class="skill-card reveal-up" style="--d:.3s">
+              <div class="skill-icon">🎬</div>
+              <h4>Video Editing</h4>
+              <div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary mt-2">Let's Collaborate
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════ -->
+  <section id="services" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">What I Do</span>
+        <h2>Services That<br><em>Drive Results</em></h2>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal-up" style="--d:.05s">
+          <div class="service-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="28" rx="3" stroke="var(--accent)" stroke-width="2"/><path d="M16 44h16M24 36v8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M12 20l4 4-4 4M22 28h8" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Web Application<br>Development</h3>
+          <p>Full-stack web apps built with React, Next.js, Node & modern databases. Fast, scalable, and pixel-perfect.</p>
+          <div class="service-tags"><span>React</span><span>Next.js</span><span>Node</span></div>
+          <a href="#contact" class="service-link">Start a Project →</a>
+        </div>
+
+        <div class="service-card reveal-up" style="--d:.1s">
+          <div class="service-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="14" y="2" width="20" height="44" rx="4" stroke="var(--accent)" stroke-width="2"/><circle cx="24" cy="40" r="2" fill="var(--accent)"/><path d="M19 8h10" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Mobile App<br>Development</h3>
+          <p>Cross-platform iOS & Android apps with React Native. Smooth UX, native performance, App Store ready.</p>
+          <div class="service-tags"><span>React Native</span><span>iOS</span><span>Android</span></div>
+          <a href="#contact" class="service-link">Start a Project →</a>
+        </div>
+
+        <div class="service-card reveal-up" style="--d:.15s">
+          <div class="service-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="var(--accent)" stroke-width="2"/><path d="M8 24h32M24 6c-4 6-6 12-6 18s2 12 6 18M24 6c4 6 6 12 6 18s-2 12-6 18" stroke="var(--accent-gold)" stroke-width="2"/></svg>
+          </div>
+          <h3>Google Ads<br>Management</h3>
+          <p>ROI-focused campaigns: Search, Display, Shopping & YouTube. Keyword research, A/B testing & monthly reporting.</p>
+          <div class="service-tags"><span>PPC</span><span>Remarketing</span><span>Analytics</span></div>
+          <a href="#contact" class="service-link">Grow My Business →</a>
+        </div>
+
+        <div class="service-card reveal-up" style="--d:.2s">
+          <div class="service-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M10 36L4 44h40l-6-8" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><path d="M14 36V20l10-12 10 12v16" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="30" r="3" fill="var(--accent-gold)"/></svg>
+          </div>
+          <h3>SEO<br>Optimization</h3>
+          <p>Technical SEO audits, on-page optimization, backlink strategy & Core Web Vitals improvement to rank #1.</p>
+          <div class="service-tags"><span>On-Page</span><span>Technical</span><span>Link Building</span></div>
+          <a href="#contact" class="service-link">Rank Higher →</a>
+        </div>
+
+        <div class="service-card reveal-up" style="--d:.25s">
+          <div class="service-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="10" width="40" height="28" rx="3" stroke="var(--accent)" stroke-width="2"/><circle cx="20" cy="24" r="6" stroke="var(--accent-gold)" stroke-width="2"/><path d="M20 18v12M14 24h12" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round"/><path d="M30 18l10 12M30 30L40 18" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Video<br>Editing</h3>
+          <p>Cinematic reels, brand videos, YouTube content & ad creatives. Color grading, motion graphics & voiceover sync.</p>
+          <div class="service-tags"><span>Premiere Pro</span><span>After Effects</span><span>Reels</span></div>
+          <a href="#contact" class="service-link">Create Content →</a>
+        </div>
+
+        <!-- CTA card -->
+        <div class="service-card service-cta reveal-up" style="--d:.3s">
+          <div class="cta-card-inner">
+            <h3>Have a project<br>in mind?</h3>
+            <p>Let's talk and turn your idea into something extraordinary.</p>
+            <a href="#contact" class="btn btn-primary">Get Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PORTFOLIO
+  ═══════════════════════════════════════ -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">My Work</span>
+        <h2>Selected<br><em>Projects</em></h2>
+      </div>
+
+      <div class="filter-bar reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="app">App</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <div class="portfolio-item reveal-up" data-cat="web" style="--d:.05s">
+          <div class="portfolio-img" style="--bg:#0d1b2a">
+            <div class="port-mock web-mock">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-content">
+                <div class="mc-line w70"></div>
+                <div class="mc-line w50 gold"></div>
+                <div class="mc-block"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="port-cat">Web App</span>
+            <h3>SaaS Dashboard</h3>
+            <p>Real-time analytics platform with live data streaming & role-based access.</p>
+            <div class="port-actions">
+              <button class="port-btn" onclick="openModal(0)">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal-up" data-cat="app" style="--d:.1s">
+          <div class="portfolio-img" style="--bg:#0b1a15">
+            <div class="port-mock app-mock">
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <div class="mc-line w60 gold"></div>
+                  <div class="mc-line w80"></div>
+                  <div class="mc-block sm"></div>
+                  <div class="mc-line w50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="port-cat">Mobile App</span>
+            <h3>FitTrack Pro</h3>
+            <p>Cross-platform fitness app with AI coaching & wearable sync for iOS & Android.</p>
+            <div class="port-actions">
+              <button class="port-btn" onclick="openModal(1)">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal-up" data-cat="marketing" style="--d:.15s">
+          <div class="portfolio-img" style="--bg:#1a0d2e">
+            <div class="port-mock mkt-mock">
+              <div class="chart-bars">
+                <div class="bar" style="height:40%"></div>
+                <div class="bar" style="height:65%"></div>
+                <div class="bar" style="height:50%"></div>
+                <div class="bar" style="height:80%"></div>
+                <div class="bar" style="height:95%"></div>
+                <div class="bar" style="height:70%"></div>
+              </div>
+              <div class="mc-line w60 gold mt-1"></div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="port-cat">Google Ads</span>
+            <h3>E-commerce Growth</h3>
+            <p>340% ROAS improvement for a D2C brand through smart bidding & shopping campaigns.</p>
+            <div class="port-actions">
+              <button class="port-btn" onclick="openModal(2)">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal-up" data-cat="web" style="--d:.2s">
+          <div class="portfolio-img" style="--bg:#1a1508">
+            <div class="port-mock web-mock">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-content">
+                <div class="mc-line w80 gold"></div>
+                <div class="mc-line w60"></div>
+                <div class="mc-block"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="port-cat">Web App</span>
+            <h3>LegalEase Platform</h3>
+            <p>Document automation & client portal for a law firm, cutting onboarding time by 60%.</p>
+            <div class="port-actions">
+              <button class="port-btn" onclick="openModal(3)">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal-up" data-cat="app" style="--d:.25s">
+          <div class="portfolio-img" style="--bg:#0a1a1a">
+            <div class="port-mock app-mock">
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <div class="mc-line w50 gold"></div>
+                  <div class="mc-block sm"></div>
+                  <div class="mc-line w70"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="port-cat">Mobile App</span>
+            <h3>FinWise Wallet</h3>
+            <p>Personal finance app with budget tracking, bill reminders & investment insights.</p>
+            <div class="port-actions">
+              <button class="port-btn" onclick="openModal(4)">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal-up" data-cat="marketing" style="--d:.3s">
+          <div class="portfolio-img" style="--bg:#1a1010">
+            <div class="port-mock mkt-mock">
+              <div class="chart-bars">
+                <div class="bar" style="height:30%"></div>
+                <div class="bar" style="height:55%"></div>
+                <div class="bar" style="height:45%"></div>
+                <div class="bar gold-bar" style="height:90%"></div>
+                <div class="bar" style="height:75%"></div>
+                <div class="bar" style="height:85%"></div>
+              </div>
+              <div class="mc-line w50 gold mt-1"></div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="port-cat">SEO + Video</span>
+            <h3>HealthBrand Scale</h3>
+            <p>Organic traffic grew 5× in 6 months through technical SEO & video content strategy.</p>
+            <div class="port-actions">
+              <button class="port-btn" onclick="openModal(5)">View Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Modal -->
+  <div id="portfolioModal" class="modal-backdrop">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════ -->
+  <section id="testimonials" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Social Proof</span>
+        <h2>Clients Love<br><em>the Results</em></h2>
+      </div>
+
+      <div class="testimonial-carousel reveal-up">
+        <div class="testi-track" id="testiTrack">
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Alex delivered a Next.js dashboard that blew our investors away. The animations, performance, and code quality were top-notch. Hired him again immediately for v2."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">RK</div>
+              <div>
+                <strong>Rahul Krishnan</strong>
+                <span>CTO, DataPulse</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Our Google Ads ROAS jumped from 1.2× to 4.1× in two months. Alex is the real deal — transparent, data-driven, and genuinely cares about ROI."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">SP</div>
+              <div>
+                <strong>Sneha Patel</strong>
+                <span>Founder, GlowNaturals</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"The mobile app Alex built for us is gorgeous. Users keep complimenting the UX. App Store reviews went from 3.4 to 4.8 stars after launch."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">MJ</div>
+              <div>
+                <strong>Marcus Johnson</strong>
+                <span>Product Lead, FitTrack</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"SEO results were incredible — page 1 for 23 keywords in 4 months. The technical audit alone was worth 10× what we paid. Highly recommended."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">AK</div>
+              <div>
+                <strong>Ananya Kaur</strong>
+                <span>Marketing Director, LegalEase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"The brand video Alex edited for us got 2M+ views on Instagram. His storytelling sense and color grading skill are genuinely cinematic."</p>
+            <div class="testi-author">
+              <div class="testi-avatar">DM</div>
+              <div>
+                <strong>Dev Mehta</strong>
+                <span>CEO, Munchbox</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="testi-nav">
+          <button class="testi-prev" id="testiPrev" aria-label="Previous">‹</button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-next" id="testiNext" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Let's Talk</span>
+        <h2>Start Your<br><em>Project Today</em></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .86h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.21-1.21a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:hello@alexmercer.dev">hello@alexmercer.dev</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Location</strong>
+              <span>Mumbai, India (Remote Worldwide)</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="fname" name="name" placeholder=" " required />
+              <label for="fname">Your Name</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="femail" name="email" placeholder=" " required />
+              <label for="femail">Email Address</label>
+              <div class="form-line"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="fsubject" name="subject" placeholder=" " />
+            <label for="fsubject">Subject</label>
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <textarea id="fmessage" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="fmessage">Your Message</label>
+            <div class="form-line"></div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader" style="display:none">Sending…</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+          <div id="formSuccess" class="form-success" style="display:none">
+            ✅ Message sent! I'll reply within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">AM<span class="logo-dot">.</span></a>
+        <p>Crafting digital experiences that leave a mark.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        <span>© 2025 Alex Mercer. All rights reserved.</span>
+        <span>Made with ❤️ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
