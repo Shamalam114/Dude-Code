@@ -1,254 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dude Code — Digital Craftsman</title>
+  <!-- FIX 1: viewport-fit=cover prevents iOS safe-area overflow -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Shamsul Alam — Full-Stack Developer &amp; Digital Growth Expert</title>
+  <meta name="description"
+    content="Shamsul Alam is a full-stack developer, mobile app architect, and digital growth strategist who builds fast, scalable, and results-driven digital products." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        LOADER
-  ═══════════════════════════════════════ -->
-  <div id="loader">
+  ══════════════════════════════ -->
+  <div id="loader" role="status" aria-label="Loading">
     <div class="loader-inner">
-      <svg class="loader-logo" viewBox="0 0 60 60" fill="none">
-        <polygon points="30,4 56,18 56,46 30,56 4,46 4,18" stroke="var(--accent)" stroke-width="2" fill="none" class="hex-stroke"/>
-        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="var(--accent)" font-family="Syne" font-size="18" font-weight="800">AM</text>
+      <svg class="loader-logo" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+        <polygon points="30,4 56,18 56,46 30,56 4,46 4,18" stroke="var(--accent)" stroke-width="2" fill="none"
+          class="hex-stroke" />
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="var(--accent)" font-family="Syne"
+          font-size="18" font-weight="800">SA</text>
       </svg>
-      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-      <span class="loader-label">Crafting Experience…</span>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <span class="loader-label">Building your experience…</span>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       CUSTOM CURSOR
-  ═══════════════════════════════════════ -->
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
+  <!-- Custom cursor (desktop only) -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        NAVBAR
-  ═══════════════════════════════════════ -->
-  <nav id="navbar">
-    <a href="#hero" class="nav-logo">Dude Code<span class="logo-dot">.</span></a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about"       class="nav-link">About</a></li>
-      <li><a href="#services"    class="nav-link">Services</a></li>
-      <li><a href="#portfolio"   class="nav-link">Work</a></li>
-      <li><a href="#testimonials"class="nav-link">Reviews</a></li>
-      <li><a href="#contact"     class="nav-link">Contact</a></li>
+  ══════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Shamsul Alam – Home">
+      <span class="logo-dot">☀️</span>SA<span class="logo-dot">🌍</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#portfolio" class="nav-link">Work</a></li>
+      <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn btn-sm nav-cta">Hire Me</a>
+
+    <!-- Right controls: theme toggle + CTA + hamburger -->
+    <div class="nav-controls">
+      <!-- FIX 3: Theme toggle – always visible -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+      </button>
+
+      <a href="#contact" class="btn btn-sm nav-cta">Hire Me</a>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        HERO
-  ═══════════════════════════════════════ -->
-  <section id="hero">
-    <canvas id="particle-canvas"></canvas>
-
-    <!-- Decorative blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+  ══════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <div class="hero-badge reveal-up">Available for Projects</div>
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Currently Available for New Projects
+      </div>
 
       <h1 class="hero-heading reveal-up">
         <span class="line">Hello, I'm</span>
         <span class="line name-line">Shamsul Alam<span class="accent-dot">.</span></span>
       </h1>
 
-      <div class="hero-roles reveal-up">
-        <span class="role-static">I build &amp; grow&nbsp;</span>
+      <div class="hero-roles reveal-up" aria-live="polite" aria-atomic="true">
+        <span class="role-static">I design &amp; engineer&nbsp;</span>
         <span class="typewriter" id="typewriter"></span>
-        <span class="cursor-blink">|</span>
+        <span class="cursor-blink" aria-hidden="true">|</span>
       </div>
 
       <p class="hero-sub reveal-up">
-        Full-stack developer · App architect · Growth marketer — crafting digital experiences that convert, scale, and stand out.
+        Full-stack developer, mobile app architect, and digital growth strategist — delivering high-performance products
+        that attract users, drive conversions, and scale with your business.
       </p>
 
       <div class="hero-btns reveal-up">
         <a href="#portfolio" class="btn btn-primary">
-          <span>View Work</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
         </a>
-        <a href="#contact" class="btn btn-ghost">Hire Me</a>
+        <a href="#contact" class="btn btn-ghost">Get a Free Quote</a>
       </div>
 
-      <div class="hero-stats reveal-up">
-        <div class="stat"><span class="stat-num" data-target="60">0</span><span>+</span><p>Projects Done</p></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-target="40">0</span><span>+</span><p>Happy Clients</p></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-target="5">0</span><span>+</span><p>Years Exp.</p></div>
+      <div class="hero-stats reveal-up" aria-label="Key statistics">
+        <div class="stat">
+          <div class="stat-value">
+            <span class="stat-num" data-target="75">0</span><span class="stat-plus">+</span>
+          </div>
+          <p>Projects Delivered</p>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <div class="stat-value">
+            <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+          </div>
+          <p>Satisfied Clients</p>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <div class="stat-value">
+            <span class="stat-num" data-target="7">0</span><span class="stat-plus">+</span>
+          </div>
+          <p>Years of Experience</p>
+        </div>
       </div>
     </div>
 
-    <div class="hero-scroll-hint">
+    <div class="hero-scroll-hint" aria-hidden="true">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        ABOUT
-  ═══════════════════════════════════════ -->
-  <section id="about" class="section">
+  ══════════════════════════════ -->
+  <section id="about" class="section" aria-label="About me">
     <div class="container">
       <div class="section-header reveal-up">
         <span class="section-tag">Who I Am</span>
-        <h2>Turning Ideas Into<br><em>Digital Reality</em></h2>
+        <h2>Turning Ambitious Ideas Into<br><em>Scalable Products</em></h2>
       </div>
 
       <div class="about-grid">
+        <!-- FIX 2: Real image container replacing SVG placeholder -->
         <div class="about-image-wrap reveal-left">
           <div class="about-img-frame">
-            <div class="about-img-placeholder">
-              <svg viewBox="0 0 200 200" fill="none">
-                <circle cx="100" cy="75" r="38" fill="var(--accent)" opacity=".15"/>
-                <circle cx="100" cy="75" r="38" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                <ellipse cx="100" cy="165" rx="62" ry="35" fill="var(--accent)" opacity=".08"/>
-                <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="var(--accent)" font-size="52" font-family="Syne" font-weight="800">AM</text>
+            <!--
+              CUSTOMISE: Replace the src with your own photo.
+              e.g. src="assets/images/your-photo.jpg"
+            -->
+            <img src="./source/sa_engineer.jpeg" alt="Shamsul Alam – Full-Stack Developer and Digital Strategist"
+              class="about-photo" loading="lazy" width="600" height="750" />
+            <div class="about-img-badge" aria-label="5-star client rated">
+              <svg width="14" height="14" fill="var(--accent-gold)" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
-            </div>
-            <div class="about-img-badge">
-              <svg width="18" height="18" fill="var(--accent)" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               5-Star Rated
             </div>
           </div>
-          <div class="floating-card fc-1">
+          <!-- Floating proof cards -->
+          <div class="floating-card fc-1" aria-hidden="true">
             <span class="fc-emoji">🚀</span>
             <div><strong>60+</strong><small>Projects</small></div>
           </div>
-          <div class="floating-card fc-2">
+          <div class="floating-card fc-2" aria-hidden="true">
             <span class="fc-emoji">💡</span>
-            <div><strong>Full Stack</strong><small>Developer</small></div>
+            <div><strong>Full-Stack</strong><small>Developer</small></div>
           </div>
         </div>
 
         <div class="about-text reveal-right">
           <p class="about-bio">
-            I'm a multi-disciplinary digital creator based in India, passionate about building products that marry aesthetic finesse with technical robustness. From pixel-perfect UIs to performance-tuned backend APIs — I do it all.
+            I'm a results-driven full-stack developer and digital strategist based in India, with over five years of
+            experience engineering products that balance exceptional design with technical precision. I take full
+            ownership — from architecture and development through to launch and ongoing optimisation.
           </p>
           <p class="about-bio">
-            Beyond code, I help businesses grow through data-driven Google Ads campaigns, technical SEO, and compelling video content. <strong>Your vision. My execution.</strong>
+            Beyond engineering, I partner with growth-focused businesses to maximise digital reach through
+            performance-led Google Ads, technical SEO, and high-converting video content. <strong>Your vision is my
+              blueprint — let's build something remarkable together.</strong>
           </p>
 
           <div class="skills-grid">
-            <!-- Skill cards -->
-            <div class="skill-card reveal-up" style="--d:.05s">
-              <div class="skill-icon">⚛️</div>
-              <h4>React / Next.js</h4>
-              <div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div>
-            </div>
-            <div class="skill-card reveal-up" style="--d:.1s">
-              <div class="skill-icon">🐍</div>
-              <h4>Node / Python</h4>
-              <div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div>
-            </div>
-            <div class="skill-card reveal-up" style="--d:.15s">
-              <div class="skill-icon">📱</div>
-              <h4>React Native</h4>
-              <div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div>
-            </div>
-            <div class="skill-card reveal-up" style="--d:.2s">
-              <div class="skill-icon">📊</div>
-              <h4>Google Ads</h4>
-              <div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div>
-            </div>
-            <div class="skill-card reveal-up" style="--d:.25s">
-              <div class="skill-icon">🔍</div>
-              <h4>SEO</h4>
-              <div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div>
-            </div>
-            <div class="skill-card reveal-up" style="--d:.3s">
-              <div class="skill-icon">🎬</div>
-              <h4>Video Editing</h4>
-              <div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div>
-            </div>
-          </div>
 
-          <a href="#contact" class="btn btn-primary mt-2">Let's Collaborate
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+  <!-- React -->
+  <div class="skill-card reveal-up" style="--d:.05s">
+    <div class="skill-icon"><i class="fab fa-react"></i></div>
+    <h4>React.js</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div>
+  </div>
+
+  <!-- Node / Python -->
+  <div class="skill-card reveal-up" style="--d:.1s">
+    <div class="skill-icon">
+      <i class="fab fa-node-js"></i>
+    </div>
+    <h4>Node.js / Python</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div>
+  </div>
+
+  <!-- React Native -->
+  <div class="skill-card reveal-up" style="--d:.15s">
+    <div class="skill-icon"><i class="fab fa-react"></i></div>
+    <h4>React Native</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div>
+  </div>
+
+  <!-- Google Ads -->
+  <div class="skill-card reveal-up" style="--d:.2s">
+    <div class="skill-icon"><i class="fab fa-google"></i></div>
+    <h4>Google Ads</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div>
+  </div>
+
+  <!-- SEO -->
+  <div class="skill-card reveal-up" style="--d:.25s">
+    <div class="skill-icon"><i class="fas fa-search"></i></div>
+    <h4>Technical SEO</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div>
+  </div>
+
+  <!-- Video Editing -->
+  <div class="skill-card reveal-up" style="--d:.3s">
+    <div class="skill-icon"><i class="fas fa-video"></i></div>
+    <h4>Video Production</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div>
+  </div>
+
+  <!-- ASP.NET -->
+  <div class="skill-card reveal-up" style="--d:.35s">
+    <div class="skill-icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="ASP.NET">
+    </div>
+    <h4>ASP.NET</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div>
+  </div>
+
+  <!-- MSSQL -->
+  <div class="skill-card reveal-up" style="--d:.4s">
+    <div class="skill-icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="MSSQL">
+    </div>
+    <h4>MS SQL Server</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div>
+  </div>
+
+  <!-- PostgreSQL / Supabase -->
+  <div class="skill-card reveal-up" style="--d:.45s">
+    <div class="skill-icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+    </div>
+    <h4>PostgreSQL / Supabase</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="87"></div></div>
+  </div>
+
+  <!-- Shopify -->
+  <div class="skill-card reveal-up" style="--d:.5s">
+    <div class="skill-icon">
+     <img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify">
+    </div>
+    <h4>Shopify</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div>
+  </div>
+
+  <!-- AWS -->
+  <div class="skill-card reveal-up" style="--d:.55s">
+    <div class="skill-icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+    </div>
+    <h4>AWS</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div>
+  </div>
+
+  <!-- Azure -->
+  <div class="skill-card reveal-up" style="--d:.6s">
+    <div class="skill-icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+    </div>
+    <h4>Microsoft Azure</h4>
+    <div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div>
+  </div>
+
+</div>
+
+          <a href="#contact" class="btn btn-primary mt-2">
+            Start a Conversation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        SERVICES
-  ═══════════════════════════════════════ -->
-  <section id="services" class="section section-dark">
+  ══════════════════════════════ -->
+  <section id="services" class="section section-alt" aria-label="Services">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-tag">What I Do</span>
-        <h2>Services That<br><em>Drive Results</em></h2>
+        <span class="section-tag">What I Deliver</span>
+        <h2>End-to-End Services That<br><em>Move the Needle</em></h2>
       </div>
 
       <div class="services-grid">
 
         <div class="service-card reveal-up" style="--d:.05s">
-          <div class="service-glow"></div>
-          <div class="service-icon-wrap">
-            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="28" rx="3" stroke="var(--accent)" stroke-width="2"/><path d="M16 44h16M24 36v8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M12 20l4 4-4 4M22 28h8" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="service-glow" aria-hidden="true"></div>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="8" width="40" height="28" rx="3" stroke="var(--accent)" stroke-width="2" />
+              <path d="M16 44h16M24 36v8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" />
+              <path d="M12 20l4 4-4 4M22 28h8" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" />
+            </svg>
           </div>
           <h3>Web Application<br>Development</h3>
-          <p>Full-stack web apps built with React, Next.js, Node & modern databases. Fast, scalable, and pixel-perfect.</p>
-          <div class="service-tags"><span>React</span><span>Next.js</span><span>Node</span></div>
-          <a href="#contact" class="service-link">Start a Project →</a>
+          <p>Custom full-stack web applications engineered for speed, reliability, and scale. Built with React, Next.js,
+            Node.js, and modern cloud infrastructure.</p>
+          <div class="service-tags"><span>React</span><span>Next.js</span><span>Node.js</span></div>
+          <a href="#contact" class="service-link">Discuss Your Project →</a>
         </div>
 
         <div class="service-card reveal-up" style="--d:.1s">
-          <div class="service-glow"></div>
-          <div class="service-icon-wrap">
-            <svg viewBox="0 0 48 48" fill="none"><rect x="14" y="2" width="20" height="44" rx="4" stroke="var(--accent)" stroke-width="2"/><circle cx="24" cy="40" r="2" fill="var(--accent)"/><path d="M19 8h10" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="service-glow" aria-hidden="true"></div>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="14" y="2" width="20" height="44" rx="4" stroke="var(--accent)" stroke-width="2" />
+              <circle cx="24" cy="40" r="2" fill="var(--accent)" />
+              <path d="M19 8h10" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" />
+            </svg>
           </div>
           <h3>Mobile App<br>Development</h3>
-          <p>Cross-platform iOS & Android apps with React Native. Smooth UX, native performance, App Store ready.</p>
+          <p>Cross-platform iOS and Android applications with native-level performance — from concept and design through
+            to App Store submission and ongoing support.</p>
           <div class="service-tags"><span>React Native</span><span>iOS</span><span>Android</span></div>
-          <a href="#contact" class="service-link">Start a Project →</a>
+          <a href="#contact" class="service-link">Discuss Your Project →</a>
         </div>
 
         <div class="service-card reveal-up" style="--d:.15s">
-          <div class="service-glow"></div>
-          <div class="service-icon-wrap">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="var(--accent)" stroke-width="2"/><path d="M8 24h32M24 6c-4 6-6 12-6 18s2 12 6 18M24 6c4 6 6 12 6 18s-2 12-6 18" stroke="var(--accent-gold)" stroke-width="2"/></svg>
+          <div class="service-glow" aria-hidden="true"></div>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="18" stroke="var(--accent)" stroke-width="2" />
+              <path d="M8 24h32M24 6c-4 6-6 12-6 18s2 12 6 18M24 6c4 6 6 12 6 18s-2 12-6 18" stroke="var(--accent-gold)"
+                stroke-width="2" />
+            </svg>
           </div>
           <h3>Google Ads<br>Management</h3>
-          <p>ROI-focused campaigns: Search, Display, Shopping & YouTube. Keyword research, A/B testing & monthly reporting.</p>
-          <div class="service-tags"><span>PPC</span><span>Remarketing</span><span>Analytics</span></div>
-          <a href="#contact" class="service-link">Grow My Business →</a>
+          <p>Data-driven paid advertising across Search, Display, Shopping, and YouTube. Continuous optimisation focused
+            on maximising your return on ad spend.</p>
+          <div class="service-tags"><span>PPC</span><span>Performance Max</span><span>Analytics</span></div>
+          <a href="#contact" class="service-link">Grow Your Revenue →</a>
         </div>
 
         <div class="service-card reveal-up" style="--d:.2s">
-          <div class="service-glow"></div>
-          <div class="service-icon-wrap">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M10 36L4 44h40l-6-8" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><path d="M14 36V20l10-12 10 12v16" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="30" r="3" fill="var(--accent-gold)"/></svg>
+          <div class="service-glow" aria-hidden="true"></div>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M10 36L4 44h40l-6-8" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" />
+              <path d="M14 36V20l10-12 10 12v16" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" />
+              <circle cx="24" cy="30" r="3" fill="var(--accent-gold)" />
+            </svg>
           </div>
-          <h3>SEO<br>Optimization</h3>
-          <p>Technical SEO audits, on-page optimization, backlink strategy & Core Web Vitals improvement to rank #1.</p>
-          <div class="service-tags"><span>On-Page</span><span>Technical</span><span>Link Building</span></div>
+          <h3>SEO<br>Optimisation</h3>
+          <p>Comprehensive technical SEO audits, on-page optimisation, content strategy, and authoritative link building
+            — engineered to rank your business at the top of Google.</p>
+          <div class="service-tags"><span>Technical SEO</span><span>On-Page</span><span>Link Building</span></div>
           <a href="#contact" class="service-link">Rank Higher →</a>
         </div>
 
         <div class="service-card reveal-up" style="--d:.25s">
-          <div class="service-glow"></div>
-          <div class="service-icon-wrap">
-            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="10" width="40" height="28" rx="3" stroke="var(--accent)" stroke-width="2"/><circle cx="20" cy="24" r="6" stroke="var(--accent-gold)" stroke-width="2"/><path d="M20 18v12M14 24h12" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round"/><path d="M30 18l10 12M30 30L40 18" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="service-glow" aria-hidden="true"></div>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="10" width="40" height="28" rx="3" stroke="var(--accent)" stroke-width="2" />
+              <circle cx="20" cy="24" r="6" stroke="var(--accent-gold)" stroke-width="2" />
+              <path d="M20 18v12M14 24h12" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M30 18l10 12M30 30L40 18" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
           </div>
-          <h3>Video<br>Editing</h3>
-          <p>Cinematic reels, brand videos, YouTube content & ad creatives. Color grading, motion graphics & voiceover sync.</p>
+          <h3>Video<br>Production</h3>
+          <p>Cinematic brand films, high-retention YouTube videos, social media reels, and ad creatives — complete with
+            colour grading, motion graphics, and voiceover sync.</p>
           <div class="service-tags"><span>Premiere Pro</span><span>After Effects</span><span>Reels</span></div>
           <a href="#contact" class="service-link">Create Content →</a>
         </div>
@@ -256,10 +418,14 @@
         <!-- CTA card -->
         <div class="service-card service-cta reveal-up" style="--d:.3s">
           <div class="cta-card-inner">
-            <h3>Have a project<br>in mind?</h3>
-            <p>Let's talk and turn your idea into something extraordinary.</p>
-            <a href="#contact" class="btn btn-primary">Get Free Quote
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            <h3>Ready to Build Something Exceptional?</h3>
+            <p>Let's discuss your requirements and create a tailored proposal — completely free of charge.</p>
+            <a href="#contact" class="btn btn-dark">
+              Get a Free Consultation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
             </a>
           </div>
         </div>
@@ -268,28 +434,28 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        PORTFOLIO
-  ═══════════════════════════════════════ -->
-  <section id="portfolio" class="section">
+  ══════════════════════════════ -->
+  <section id="portfolio" class="section" aria-label="Portfolio">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-tag">My Work</span>
-        <h2>Selected<br><em>Projects</em></h2>
+        <span class="section-tag">Selected Work</span>
+        <h2>Projects That<br><em>Delivered Results</em></h2>
       </div>
 
-      <div class="filter-bar reveal-up">
-        <button class="filter-btn active" data-filter="all">All</button>
+      <div class="filter-bar reveal-up" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="web">Web</button>
-        <button class="filter-btn" data-filter="app">App</button>
+        <button class="filter-btn" data-filter="app">Mobile</button>
         <button class="filter-btn" data-filter="marketing">Marketing</button>
       </div>
 
-      <div class="portfolio-grid" id="portfolioGrid">
+      <div class="portfolio-grid" id="portfolioGrid" role="list">
 
-        <div class="portfolio-item reveal-up" data-cat="web" style="--d:.05s">
+        <div class="portfolio-item reveal-up" data-cat="web" style="--d:.05s" role="listitem">
           <div class="portfolio-img" style="--bg:#0d1b2a">
-            <div class="port-mock web-mock">
+            <div class="port-mock web-mock" aria-hidden="true">
               <div class="mock-bar"><span></span><span></span><span></span></div>
               <div class="mock-content">
                 <div class="mc-line w70"></div>
@@ -299,18 +465,18 @@
             </div>
           </div>
           <div class="portfolio-overlay">
-            <span class="port-cat">Web App</span>
-            <h3>SaaS Dashboard</h3>
-            <p>Real-time analytics platform with live data streaming & role-based access.</p>
+            <span class="port-cat">Web Application</span>
+            <h3>SaaS Analytics Dashboard</h3>
+            <p>Real-time data platform with live WebSocket streaming and multi-tenant architecture.</p>
             <div class="port-actions">
-              <button class="port-btn" onclick="openModal(0)">View Details</button>
+              <button class="port-btn" onclick="openModal(0)">View Case Study</button>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item reveal-up" data-cat="app" style="--d:.1s">
+        <div class="portfolio-item reveal-up" data-cat="app" style="--d:.1s" role="listitem">
           <div class="portfolio-img" style="--bg:#0b1a15">
-            <div class="port-mock app-mock">
+            <div class="port-mock app-mock" aria-hidden="true">
               <div class="phone-frame">
                 <div class="phone-screen">
                   <div class="mc-line w60 gold"></div>
@@ -324,16 +490,16 @@
           <div class="portfolio-overlay">
             <span class="port-cat">Mobile App</span>
             <h3>FitTrack Pro</h3>
-            <p>Cross-platform fitness app with AI coaching & wearable sync for iOS & Android.</p>
+            <p>AI-powered fitness companion with wearable sync for iOS and Android.</p>
             <div class="port-actions">
-              <button class="port-btn" onclick="openModal(1)">View Details</button>
+              <button class="port-btn" onclick="openModal(1)">View Case Study</button>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item reveal-up" data-cat="marketing" style="--d:.15s">
+        <div class="portfolio-item reveal-up" data-cat="marketing" style="--d:.15s" role="listitem">
           <div class="portfolio-img" style="--bg:#1a0d2e">
-            <div class="port-mock mkt-mock">
+            <div class="port-mock mkt-mock" aria-hidden="true">
               <div class="chart-bars">
                 <div class="bar" style="height:40%"></div>
                 <div class="bar" style="height:65%"></div>
@@ -347,17 +513,17 @@
           </div>
           <div class="portfolio-overlay">
             <span class="port-cat">Google Ads</span>
-            <h3>E-commerce Growth</h3>
-            <p>340% ROAS improvement for a D2C brand through smart bidding & shopping campaigns.</p>
+            <h3>D2C E-commerce Scale-Up</h3>
+            <p>Achieved a 340% ROAS improvement for a direct-to-consumer skincare brand.</p>
             <div class="port-actions">
-              <button class="port-btn" onclick="openModal(2)">View Details</button>
+              <button class="port-btn" onclick="openModal(2)">View Case Study</button>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item reveal-up" data-cat="web" style="--d:.2s">
+        <div class="portfolio-item reveal-up" data-cat="web" style="--d:.2s" role="listitem">
           <div class="portfolio-img" style="--bg:#1a1508">
-            <div class="port-mock web-mock">
+            <div class="port-mock web-mock" aria-hidden="true">
               <div class="mock-bar"><span></span><span></span><span></span></div>
               <div class="mock-content">
                 <div class="mc-line w80 gold"></div>
@@ -367,18 +533,18 @@
             </div>
           </div>
           <div class="portfolio-overlay">
-            <span class="port-cat">Web App</span>
-            <h3>LegalEase Platform</h3>
-            <p>Document automation & client portal for a law firm, cutting onboarding time by 60%.</p>
+            <span class="port-cat">Web Application</span>
+            <h3>LegalEase Client Portal</h3>
+            <p>Document automation platform reducing law firm onboarding time by 60%.</p>
             <div class="port-actions">
-              <button class="port-btn" onclick="openModal(3)">View Details</button>
+              <button class="port-btn" onclick="openModal(3)">View Case Study</button>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item reveal-up" data-cat="app" style="--d:.25s">
+        <div class="portfolio-item reveal-up" data-cat="app" style="--d:.25s" role="listitem">
           <div class="portfolio-img" style="--bg:#0a1a1a">
-            <div class="port-mock app-mock">
+            <div class="port-mock app-mock" aria-hidden="true">
               <div class="phone-frame">
                 <div class="phone-screen">
                   <div class="mc-line w50 gold"></div>
@@ -390,17 +556,17 @@
           </div>
           <div class="portfolio-overlay">
             <span class="port-cat">Mobile App</span>
-            <h3>FinWise Wallet</h3>
-            <p>Personal finance app with budget tracking, bill reminders & investment insights.</p>
+            <h3>FinWise Personal Finance</h3>
+            <p>Intelligent budgeting app with Plaid API integration and ML-driven spending insights.</p>
             <div class="port-actions">
-              <button class="port-btn" onclick="openModal(4)">View Details</button>
+              <button class="port-btn" onclick="openModal(4)">View Case Study</button>
             </div>
           </div>
         </div>
 
-        <div class="portfolio-item reveal-up" data-cat="marketing" style="--d:.3s">
+        <div class="portfolio-item reveal-up" data-cat="marketing" style="--d:.3s" role="listitem">
           <div class="portfolio-img" style="--bg:#1a1010">
-            <div class="port-mock mkt-mock">
+            <div class="port-mock mkt-mock" aria-hidden="true">
               <div class="chart-bars">
                 <div class="bar" style="height:30%"></div>
                 <div class="bar" style="height:55%"></div>
@@ -414,10 +580,10 @@
           </div>
           <div class="portfolio-overlay">
             <span class="port-cat">SEO + Video</span>
-            <h3>HealthBrand Scale</h3>
-            <p>Organic traffic grew 5× in 6 months through technical SEO & video content strategy.</p>
+            <h3>HealthBrand Organic Growth</h3>
+            <p>Grew organic traffic 5× in six months through technical SEO and strategic video content.</p>
             <div class="port-actions">
-              <button class="port-btn" onclick="openModal(5)">View Details</button>
+              <button class="port-btn" onclick="openModal(5)">View Case Study</button>
             </div>
           </div>
         </div>
@@ -427,219 +593,254 @@
   </section>
 
   <!-- Portfolio Modal -->
-  <div id="portfolioModal" class="modal-backdrop">
+  <div id="portfolioModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close case study">&times;</button>
       <div id="modalContent"></div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        TESTIMONIALS
-  ═══════════════════════════════════════ -->
-  <section id="testimonials" class="section section-dark">
+  ══════════════════════════════ -->
+  <!-- <section id="testimonials" class="section section-alt" aria-label="Client testimonials">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-tag">Social Proof</span>
-        <h2>Clients Love<br><em>the Results</em></h2>
+        <span class="section-tag">Client Testimonials</span>
+        <h2>What Clients Say About<br><em>Working Together</em></h2>
       </div>
 
       <div class="testimonial-carousel reveal-up">
-        <div class="testi-track" id="testiTrack">
+        <div class="testi-track" id="testiTrack" role="list">
 
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"Alex delivered a Next.js dashboard that blew our investors away. The animations, performance, and code quality were top-notch. Hired him again immediately for v2."</p>
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-quote">"Alex delivered a Next.js dashboard that genuinely impressed our investors. The performance, animations, and code quality were exceptional. We brought him back immediately for phase two."</p>
             <div class="testi-author">
-              <div class="testi-avatar">RK</div>
-              <div>
-                <strong>Rahul Krishnan</strong>
-                <span>CTO, DataPulse</span>
-              </div>
+              <div class="testi-avatar" aria-hidden="true">RK</div>
+              <div><strong>Rahul Krishnan</strong><span>CTO, DataPulse Technologies</span></div>
             </div>
           </div>
 
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"Our Google Ads ROAS jumped from 1.2× to 4.1× in two months. Alex is the real deal — transparent, data-driven, and genuinely cares about ROI."</p>
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-quote">"Our Google Ads ROAS jumped from 1.2× to over 4× in under two months. Alex is transparent, data-driven, and genuinely invested in our growth — not just running campaigns blindly."</p>
             <div class="testi-author">
-              <div class="testi-avatar">SP</div>
-              <div>
-                <strong>Sneha Patel</strong>
-                <span>Founder, GlowNaturals</span>
-              </div>
+              <div class="testi-avatar" aria-hidden="true">SP</div>
+              <div><strong>Sneha Patel</strong><span>Founder, GlowNaturals</span></div>
             </div>
           </div>
 
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"The mobile app Alex built for us is gorgeous. Users keep complimenting the UX. App Store reviews went from 3.4 to 4.8 stars after launch."</p>
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-quote">"The mobile app Alex built receives constant praise from our users. App Store ratings improved from 3.4 to 4.8 stars within three months of launch. The UX polish is outstanding."</p>
             <div class="testi-author">
-              <div class="testi-avatar">MJ</div>
-              <div>
-                <strong>Marcus Johnson</strong>
-                <span>Product Lead, FitTrack</span>
-              </div>
+              <div class="testi-avatar" aria-hidden="true">MJ</div>
+              <div><strong>Marcus Johnson</strong><span>Head of Product, FitTrack</span></div>
             </div>
           </div>
 
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"SEO results were incredible — page 1 for 23 keywords in 4 months. The technical audit alone was worth 10× what we paid. Highly recommended."</p>
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-quote">"Page one rankings for 23 competitive keywords in four months. The technical audit uncovered issues our previous agency had missed for years. Outstanding expertise and communication."</p>
             <div class="testi-author">
-              <div class="testi-avatar">AK</div>
-              <div>
-                <strong>Ananya Kaur</strong>
-                <span>Marketing Director, LegalEase</span>
-              </div>
+              <div class="testi-avatar" aria-hidden="true">AK</div>
+              <div><strong>Ananya Kaur</strong><span>Marketing Director, LegalEase</span></div>
             </div>
           </div>
 
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"The brand video Alex edited for us got 2M+ views on Instagram. His storytelling sense and color grading skill are genuinely cinematic."</p>
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-quote">"The brand video Alex produced generated over 2 million views on Instagram. His understanding of storytelling, pacing, and colour grading is genuinely cinematic. A true creative partner."</p>
             <div class="testi-author">
-              <div class="testi-avatar">DM</div>
-              <div>
-                <strong>Dev Mehta</strong>
-                <span>CEO, Munchbox</span>
-              </div>
+              <div class="testi-avatar" aria-hidden="true">DM</div>
+              <div><strong>Dev Mehta</strong><span>CEO, Munchbox</span></div>
             </div>
           </div>
 
         </div>
 
-        <div class="testi-nav">
-          <button class="testi-prev" id="testiPrev" aria-label="Previous">‹</button>
-          <div class="testi-dots" id="testiDots"></div>
-          <button class="testi-next" id="testiNext" aria-label="Next">›</button>
+        <div class="testi-nav" aria-label="Carousel navigation">
+          <button class="testi-prev" id="testiPrev" aria-label="Previous testimonial">‹</button>
+          <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial pagination"></div>
+          <button class="testi-next" id="testiNext" aria-label="Next testimonial">›</button>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        CONTACT
-  ═══════════════════════════════════════ -->
-  <section id="contact" class="section">
+  ══════════════════════════════ -->
+  <section id="contact" class="section" aria-label="Contact">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-tag">Let's Talk</span>
-        <h2>Start Your<br><em>Project Today</em></h2>
+        <span class="section-tag">Get in Touch</span>
+        <h2>Let's Build Your<br><em>Next Big Thing</em></h2>
       </div>
 
       <div class="contact-grid">
         <div class="contact-info reveal-left">
+          <p class="contact-intro">
+            Have a project in mind or a challenge to solve? I'd love to hear from you. I respond to all enquiries within
+            24 hours on business days.
+          </p>
+
           <div class="contact-info-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .86h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.21-1.21a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <div class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .86h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.21-1.21a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
             </div>
-            <div>
+            <div class="content">
               <strong>Phone</strong>
-              <a href="tel:+919876543210">+91 98765 43210</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:hello@alexmercer.dev">hello@alexmercer.dev</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <strong>Location</strong>
-              <span>Mumbai, India (Remote Worldwide)</span>
+              <a href="tel:+918682034476">+91 86820 34476</a>
             </div>
           </div>
 
-          <div class="social-links">
-            <a href="#" class="social-btn" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          <div class="contact-info-item">
+            <div class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="content">
+              <strong>Email</strong>
+              <a href="mailto:shamzdevelopmentuse@gmail.com">shamzdevelopmentuse@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="content">
+              <strong>Location</strong>
+              <span>Chennai, Tamil Nadu, India · Available Worldwide (Remote)</span>
+            </div>
+          </div>
+
+          <div class="social-links" aria-label="Social media">
+
+            <!-- LinkedIn (keep as it is) -->
+            <a href="https://www.linkedin.com/in/shamsul-alam-023407192" target="_blank" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
             </a>
-            <a href="#" class="social-btn" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/+918682034476" target="_blank" class="social-btn" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20.52 3.48A11.91 11.91 0 0012.01 0C5.38 0 .02 5.36.02 12c0 2.12.55 4.18 1.6 6L0 24l6.16-1.6A11.94 11.94 0 0012.01 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.49-8.52zM12 22a9.94 9.94 0 01-5.09-1.4l-.36-.21-3.65.95.97-3.56-.23-.37A9.94 9.94 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.36c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.8.37-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35z" />
+              </svg>
             </a>
-            <a href="#" class="social-btn" aria-label="Twitter/X">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/18FdgRvgbU/" target="_blank" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M22 12a10 10 0 10-11.5 9.87v-6.99H7.9V12h2.6V9.8c0-2.56 1.52-3.98 3.85-3.98 1.12 0 2.3.2 2.3.2v2.52h-1.3c-1.28 0-1.68.8-1.68 1.62V12h2.86l-.46 2.88h-2.4v6.99A10 10 0 0022 12z" />
+              </svg>
             </a>
-            <a href="#" class="social-btn" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+
+            <!-- Instagram (keep as it is) -->
+            <a href="https://www.instagram.com/mosban114?igsh=bHVsamo4N3E4Y2d6" target="_blank" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" />
+              </svg>
             </a>
+
           </div>
         </div>
 
-        <form class="contact-form reveal-right" id="contactForm" novalidate>
+        <form class="contact-form reveal-right" id="contactForm" novalidate aria-label="Send a message">
           <div class="form-row">
             <div class="form-group">
-              <input type="text" id="fname" name="name" placeholder=" " required />
+              <input type="text" id="fname" name="name" placeholder=" " required autocomplete="name" />
               <label for="fname">Your Name</label>
-              <div class="form-line"></div>
+              <div class="form-line" aria-hidden="true"></div>
             </div>
             <div class="form-group">
-              <input type="email" id="femail" name="email" placeholder=" " required />
+              <input type="email" id="femail" name="email" placeholder=" " required autocomplete="email" />
               <label for="femail">Email Address</label>
-              <div class="form-line"></div>
+              <div class="form-line" aria-hidden="true"></div>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" id="fsubject" name="subject" placeholder=" " />
-            <label for="fsubject">Subject</label>
-            <div class="form-line"></div>
+            <input type="text" id="fsubject" name="subject" placeholder=" " autocomplete="off" />
+            <label for="fsubject">Project Type / Subject</label>
+            <div class="form-line" aria-hidden="true"></div>
           </div>
           <div class="form-group">
             <textarea id="fmessage" name="message" rows="5" placeholder=" " required></textarea>
-            <label for="fmessage">Your Message</label>
-            <div class="form-line"></div>
+            <label for="fmessage">Tell Me About Your Project</label>
+            <div class="form-line" aria-hidden="true"></div>
           </div>
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
               <span class="btn-text">Send Message</span>
-              <span class="btn-loader" style="display:none">Sending…</span>
-              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              <span class="btn-loader" style="display:none" aria-hidden="true">Sending…</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" aria-hidden="true">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
             </button>
           </div>
-          <div id="formSuccess" class="form-success" style="display:none">
-            ✅ Message sent! I'll reply within 24 hours.
+          <div id="formSuccess" class="form-success" style="display:none" role="status" aria-live="polite">
+            ✅ Message received! I'll be in touch within 24 hours.
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
+  <!-- ══════════════════════════════
        FOOTER
-  ═══════════════════════════════════════ -->
-  <footer id="footer">
+  ══════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
     <div class="footer-inner container">
       <div class="footer-brand">
-        <a href="#hero" class="nav-logo">AM<span class="logo-dot">.</span></a>
-        <p>Crafting digital experiences that leave a mark.</p>
+        <a href="#hero" class="nav-logo" aria-label="Back to top"><span class="logo-dot">☀️</span>SA<span
+            class="logo-dot">🌍</span></a>
+        <p>Designing and engineering digital experiences that perform, scale, and inspire.</p>
       </div>
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Work</a>
+        <a href="#testimonials">Reviews</a>
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
       <div class="footer-copy">
-        <span>© 2025 Alex Mercer. All rights reserved.</span>
-        <span>Made with ❤️ in India</span>
+        <span>© 2026 Shamsul Alam. All rights reserved.</span>
       </div>
     </div>
   </footer>
 
-  <!-- Back to top -->
-  <button id="backTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  <button id="backTop" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
   </button>
+  <a href="https://wa.me/919876543210" 
+    class="whatsapp-float" 
+    target="_blank" 
+    aria-label="Chat on WhatsApp">
 
+    <i class="fab fa-whatsapp"></i>
+
+  </a>
   <script src="script.js"></script>
 </body>
+
 </html>
