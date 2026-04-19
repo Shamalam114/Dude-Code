@@ -364,48 +364,127 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
    PORTFOLIO MODAL
 ───────────────────────────────────────────────────────── */
 const modalData = [
+
   {
     tag: 'Web Application',
-    title: 'SaaS Analytics Dashboard',
-    desc: 'A fully custom real-time analytics platform built for a fintech startup. Features live chart streaming via WebSockets, multi-tenant architecture, role-based access control, and a high-performance dark-mode design system. Reduced client decision latency by 40% and cut infrastructure costs through query optimisation.',
-    tech: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'WebSockets', 'Tailwind CSS', 'AWS'],
-    results: [{ num:'40%', label:'Faster Decisions' }, { num:'2×', label:'User Retention' }, { num:'99.9%', label:'Uptime SLA' }]
+    title: 'DoGo CRM System',
+    desc: 'Developed a complete customer relationship management (CRM) platform to streamline lead generation, client communication, and sales workflows. The system enables automated email and WhatsApp marketing, fast proposal and invoice generation, credit note handling, and real-time lead tracking. Designed to help businesses improve conversion efficiency and manage customers in one centralized platform.',
+    tech: ['ASP.NET', 'MS SQL Server', 'Bootstrap', 'JavaScript'],
+    results: [
+      { num:'70%', label:'Faster Lead Handling' },
+      { num:'2×', label:'Sales Process Efficiency' },
+      { num:'100%', label:'Centralized Tracking' }
+    ]
   },
+
   {
-    tag: 'Mobile App',
-    title: 'FitTrack Pro',
-    desc: 'A cross-platform fitness application for iOS and Android built with React Native. Features AI-powered workout recommendations, Apple Health and Google Fit integration, animated progress rings, and an offline-first architecture. Successfully published on both app stores with a frictionless onboarding flow.',
-    tech: ['React Native', 'Expo', 'Firebase', 'TensorFlow Lite', 'HealthKit', 'Google Fit API'],
-    results: [{ num:'4.8★', label:'App Store Rating' }, { num:'50K+', label:'Downloads' }, { num:'30%', label:'DAU Growth' }]
+    tag: 'Mobile Application',
+    title: 'Social Media App',
+    desc: 'Built a fully functional cross-platform social media application with real-time chat, post sharing, group creation, likes, and comments. Integrated Supabase backend for authentication and data management, ensuring fast performance and scalable architecture.',
+    tech: ['React Native', 'Tailwind CSS', 'Supabase'],
+    results: [
+      { num:'Real-time', label:'Chat System' },
+      { num:'Smooth', label:'User Experience' },
+      { num:'Scalable', label:'Backend Architecture' }
+    ]
   },
-  {
-    tag: 'Google Ads Management',
-    title: 'D2C E-commerce Scale-Up',
-    desc: 'Comprehensive Google Ads overhaul for a direct-to-consumer skincare brand. Restructured campaign hierarchy, implemented Performance Max, conducted systematic A/B testing on creatives and landing pages, and built a custom Looker Studio reporting dashboard. Results delivered within 60 days of engagement.',
-    tech: ['Google Ads', 'Performance Max', 'GA4', 'Merchant Center', 'Looker Studio', 'Landing Page CRO'],
-    results: [{ num:'340%', label:'ROAS Achieved' }, { num:'−62%', label:'CPA Reduction' }, { num:'₹8L+', label:'Revenue Added' }]
-  },
+
   {
     tag: 'Web Application',
-    title: 'LegalEase Client Portal',
-    desc: 'Document automation and client management portal for a 50-attorney law firm. Integrated DocuSign for e-signatures, built smart intake forms that auto-populate legal templates, and created an encrypted client-facing portal with secure document storage. Significantly reduced administrative overhead.',
-    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'DocuSign API', 'AWS S3', 'Stripe', 'NextAuth'],
-    results: [{ num:'60%', label:'Faster Onboarding' }, { num:'Zero', label:'Paper Forms' }, { num:'4.9★', label:'Client Rating' }]
+    title: 'Building Management Admin Panel',
+    desc: 'Developed a centralized admin dashboard for building management, allowing administrators to manage employees, security staff, and tenants efficiently. Implemented bulk email notification system and real-time data handling for smooth operations.',
+    tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    results: [
+      { num:'60%', label:'Manual Work Reduced' },
+      { num:'Instant', label:'Notifications' },
+      { num:'Efficient', label:'Management System' }
+    ]
   },
+
   {
-    tag: 'Mobile App',
-    title: 'FinWise Personal Finance',
-    desc: 'An intelligent personal finance app aggregating bank accounts via the Plaid API, with ML-driven transaction categorisation, beautiful spending-insight charts, and smart bill-due reminders. Built with an offline-first architecture using local encryption, ensuring data remains private and accessible.',
-    tech: ['React Native', 'Plaid API', 'Python ML', 'SQLite', 'AWS Lambda', 'Expo SecureStore'],
-    results: [{ num:'28%', label:'Avg. Savings Increase' }, { num:'4.7★', label:'Play Store' }, { num:'25K+', label:'Active Users' }]
+    tag: 'E-commerce Platform',
+    title: 'Custom E-commerce Application',
+    desc: 'Built a full-featured e-commerce platform with admin dashboard, product management, shopping cart, secure online payments, and order tracking. Designed for smooth user experience and scalable business growth.',
+    tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    results: [
+      { num:'Fast', label:'Checkout Process' },
+      { num:'Secure', label:'Payments' },
+      { num:'User-Friendly', label:'Shopping Experience' }
+    ]
   },
+
   {
-    tag: 'SEO + Video Marketing',
-    title: 'HealthBrand Organic Growth',
-    desc: 'A six-month SEO and content strategy engagement for a health supplement brand. Delivered a full technical audit, Core Web Vitals remediation, entity-based content cluster strategy, and a YouTube plus Instagram Reels content calendar. Achieved 23 page-one keyword rankings and a 5× organic traffic increase.',
-    tech: ['Ahrefs', 'Screaming Frog', 'GSC', 'Premiere Pro', 'After Effects', 'YouTube Studio'],
-    results: [{ num:'5×', label:'Organic Traffic' }, { num:'23', label:'Page-1 Keywords' }, { num:'2M+', label:'Video Views' }]
+    tag: 'Shopify Development',
+    title: 'Shopify Store Setup & Optimization',
+    desc: 'Set up and customized Shopify e-commerce stores for businesses, including product setup, theme customization, and basic SEO optimization. Ensured smooth user experience and conversion-focused design.',
+    tech: ['Shopify', 'Liquid', 'SEO'],
+    results: [
+      { num:'Live', label:'Store Deployment' },
+      { num:'Optimized', label:'Product Pages' },
+      { num:'Improved', label:'User Experience' }
+    ]
+  },
+
+  {
+    tag: 'Web Application',
+    title: 'Inventory Management System',
+    desc: 'Enhanced and developed key modules of an inventory management system, including product management and invoice functionality. Improved system usability and streamlined stock tracking processes.',
+    tech: ['ASP.NET', 'MS SQL Server'],
+    results: [
+      { num:'Accurate', label:'Stock Tracking' },
+      { num:'Improved', label:'Invoice System' },
+      { num:'Efficient', label:'Operations' }
+    ]
+  },
+
+  {
+    tag: 'Website + Marketing',
+    title: 'Safedrive Safelife Website',
+    desc: 'Designed and developed a responsive static website focused on lead generation. Optimized for SEO and user engagement to drive customer inquiries through contact forms.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'SEO'],
+    results: [
+      { num:'Increased', label:'Website Traffic' },
+      { num:'More', label:'Customer Inquiries' },
+      { num:'Fast', label:'Page Load Speed' }
+    ]
+  },
+
+  {
+    tag: 'Google Ads Campaign',
+    title: 'RightMaidsDubai Lead Generation',
+    desc: 'Managed Google Ads campaigns focused on lead generation. Implemented keyword targeting, conversion tracking, and cost-per-acquisition (CPA) optimization strategies to maximize ROI and generate quality leads.',
+    tech: ['Google Ads', 'Keyword Research', 'Conversion Tracking'],
+    results: [
+      { num:'High', label:'Quality Leads' },
+      { num:'Optimized', label:'CPA' },
+      { num:'Improved', label:'ROI' }
+    ]
+  },
+
+  {
+    tag: 'Web Application',
+    title: 'Online Gas Booking System',
+    desc: 'Developed a complete gas booking management system with user booking, tracking, and admin control panel. Designed for simplicity and efficient service management.',
+    tech: ['ASP.NET', 'MS SQL Server'],
+    results: [
+      { num:'Easy', label:'Booking Process' },
+      { num:'Real-time', label:'Tracking' },
+      { num:'Reliable', label:'System' }
+    ]
+  },
+
+  {
+    tag: 'Web Application',
+    title: 'Attendance Management System',
+    desc: 'Built a staff attendance and leave management system with admin approval workflows. Enabled organizations to manage employee attendance efficiently.',
+    tech: ['PHP', 'MySQL'],
+    results: [
+      { num:'Automated', label:'Attendance Tracking' },
+      { num:'Reduced', label:'Manual Work' },
+      { num:'Organized', label:'HR Process' }
+    ]
   }
+
 ];
 
 window.openModal = function(idx) {
