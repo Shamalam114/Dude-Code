@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   ALEX MERCER PORTFOLIO — script.js  v2.0
+   script.js  v2.0
    Fixes: theme toggle + localStorage, mobile nav, overflow guard
    Features: particles, typewriter, counters, carousel, modal, tilt
 ═══════════════════════════════════════════════════════════ */
