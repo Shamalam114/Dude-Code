@@ -203,7 +203,7 @@ const roles = [
   'AI Solutions.',
   'Google Ads Campaigns.',
   'Social Media Marketing.',
-  'Video Content.'
+  'Professional Videos.'
 ];
 let roleIdx = 0, charIdx = 0, deleting = false;
 
