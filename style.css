@@ -111,6 +111,29 @@ body.loading {
   overflow: hidden;
 }
 
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+        to bottom,
+        #FBBF24,
+        #F59E0B,
+        #60A5FA,
+        #2563EB
+    );
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:
+        0 0 10px rgba(245,158,11,.45),
+        0 0 18px rgba(37,99,235,.35);
+}
+
 /* Restore normal cursor on touch devices */
 @media (pointer:coarse) {
   body {
@@ -475,6 +498,17 @@ body.cursor-hover #cursor-dot {
   color: var(--text);
   margin-right: auto;
   flex-shrink: 0;
+}
+
+.logo-img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    transition:transform .3s ease;
+}
+
+.nav-logo:hover .logo-img{
+    transform:rotate(-5deg) scale(1.05);
 }
 
 .logo-dot {
