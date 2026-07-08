@@ -196,10 +196,13 @@ function updateParticleColours() {
 ───────────────────────────────────────────────────────── */
 const typewriterEl = document.getElementById('typewriter');
 const roles = [
-  'Web Applications.',
+  'Websites.',
   'Mobile Apps.',
-  'Google Ads.',
-  'SEO Strategies.',
+  'CRM Solutions.',
+  'E-commerce Platforms.',
+  'AI Solutions.',
+  'Google Ads Campaigns.',
+  'Social Media Marketing.',
   'Video Content.'
 ];
 let roleIdx = 0, charIdx = 0, deleting = false;
